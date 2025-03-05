@@ -15,23 +15,39 @@
 # include <cctype>
 # include <string>
 
+static std::string	add_word_to_output(char *word)
+{
+	std::string	converted_word = word;
+
+	for(size_t i = 0; i < converted_word.length(); ++i)
+	{
+		converted_word[i] = std::toupper(converted_word[i]);
+	}
+	return (converted_word);
+}
+
+static	std::string	build_megaphone_output(char **megaphone_input)
+{
+	std::string	megaphone_output;
+
+	for (size_t i = 0; megaphone_input[i] != NULL; ++i)
+	{
+		megaphone_output += add_word_to_output(megaphone_input[i]);
+	}
+	return (megaphone_output);
+}
+
 int	main(int ac, char **av)
 {
-	if (ac > 2)
-		return (EXIT_FAILURE);
-	else if (ac == 1)
+	if (ac == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (EXIT_SUCCESS);
 	}
 	else
 	{
-		std::string	megaphone_input = av[1];
-		for (size_t i = 0; i < megaphone_input.length(); i++)
-		{
-			megaphone_input[i] = std::toupper(megaphone_input[i]);
-		}
-		std::cout << megaphone_input << std::endl;
+		std::string	megaphone_output = build_megaphone_output(av + 1);
+		std::cout << megaphone_output << std::endl;
 	}
 	return (EXIT_SUCCESS);
 }
