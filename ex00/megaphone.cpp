@@ -15,15 +15,15 @@
 # include <cctype>
 # include <string>
 
-static std::string	add_word_to_output(char *word)
+static std::string	add_word_to_megaphone_output(char *word)
 {
-	std::string	converted_word = word;
+	std::string	upcase_word = word;
 
-	for(size_t i = 0; i < converted_word.length(); ++i)
+	for(size_t i = 0; i < upcase_word.length(); ++i)
 	{
-		converted_word[i] = std::toupper(converted_word[i]);
+		upcase_word[i] = std::toupper(upcase_word[i]);
 	}
-	return (converted_word);
+	return (upcase_word);
 }
 
 static	std::string	build_megaphone_output(char **megaphone_input)
@@ -32,7 +32,7 @@ static	std::string	build_megaphone_output(char **megaphone_input)
 
 	for (size_t i = 0; megaphone_input[i] != NULL; ++i)
 	{
-		megaphone_output += add_word_to_output(megaphone_input[i]);
+		megaphone_output += add_word_to_megaphone_output(megaphone_input[i]);
 	}
 	return (megaphone_output);
 }
