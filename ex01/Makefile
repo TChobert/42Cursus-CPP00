@@ -29,14 +29,15 @@ endif
 
 ## SOURCES ##
 
-SRCS += Phonebook.cpp
+SRCS += main.cpp
+SRCS += PhoneBook.cpp
 SRCS += Contact.cpp
 
 ## INCLUDES ##
 
 INCLUDES_DIR := .
 
-INCLUDES += Phonebook.hpp
+INCLUDES += PhoneBook.hpp
 INCLUDES += Contact.hpp
 
 ## OBJECTS ##
