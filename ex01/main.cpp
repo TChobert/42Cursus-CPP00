@@ -18,7 +18,6 @@ int	main(void)
 	while (true)
 	{
 		user_interface(phonebook);
-		phonebook.display_phonebook_content();
 	}
 	return (EXIT_SUCCESS);
 }
