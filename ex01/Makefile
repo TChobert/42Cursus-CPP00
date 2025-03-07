@@ -30,6 +30,7 @@ endif
 ## SOURCES ##
 
 SRCS += main.cpp
+SRCS += UserInterface.cpp
 SRCS += PhoneBook.cpp
 SRCS += Contact.cpp
 

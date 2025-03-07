@@ -30,10 +30,10 @@ class Contact
 	public:
 
 	explicit Contact();
+	void	set_contact_first_name(std::string edit);
+	void	set_contact_last_name(std::string edit);
+	void	set_contact_nickname(std::string edit);
+	void	set_contact_phone_number(std::string edit);
+	void	set_contact_darkest_secret(std::string edit);
 	void	display_contact_content(void) const;
-	void	edit_contact_first_name(std::string edit);
-	void	edit_contact_last_name(std::string edit);
-	void	edit_contact_nickname(std::string edit);
-	void	edit_contact_phone_number(std::string edit);
-	void	edit_contact_darkest_secret(std::string edit);
 };

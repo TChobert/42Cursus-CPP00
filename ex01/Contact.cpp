@@ -12,7 +12,7 @@
 
 #include "Contact.hpp"
 
-// Default constructor for contact class
+// Default constructor for Contact class
 Contact::Contact(void)
 {
 	first_name = "Empty";
@@ -22,30 +22,34 @@ Contact::Contact(void)
 	darkest_secret = "Empty";
 }
 
-void	Contact::edit_contact_first_name(std::string edit)
+// Setters for Contact class
+
+void	Contact::set_contact_first_name(std::string user_input)
 {
-	first_name = edit;
+	first_name = user_input;
 }
 
-void	Contact::edit_contact_last_name(std::string edit)
+void	Contact::set_contact_last_name(std::string user_input)
 {
-	last_name = edit;
+	last_name = user_input;
 }
 
-void	Contact::edit_contact_nickname(std::string edit)
+void	Contact::set_contact_nickname(std::string user_input)
 {
-	last_name = edit;
+	last_name = user_input;
 }
 
-void	Contact::edit_contact_phone_number(std::string edit)
+void	Contact::set_contact_phone_number(std::string user_input)
 {
-	last_name = edit;
+	last_name = user_input;
 }
 
-void	Contact::edit_contact_darkest_secret(std::string edit)
+void	Contact::set_contact_darkest_secret(std::string user_input)
 {
-	last_name = edit;
+	last_name = user_input;
 }
+
+// Display
 
 void	Contact::display_contact_content(void) const
 {

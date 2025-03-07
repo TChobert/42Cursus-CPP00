@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   UserInterface.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:24:51 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/07 14:24:53 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/07 15:27:48 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/07 15:27:56 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-//Getters fot PhoneBook class
-
-Contact&	PhoneBook::get_contact_in_contacts_list(size_t	contact_index)
+static void	check_input_validity(std::string& user_input)
 {
-	// SECU OUT OF RANGE !!
-	return (contacts_list[contact_index]);
+	if (user_input[0] == 0)
+	{
+		std::exit(EXIT_FAILURE);
+	}
 }
 
-// Display
-
-void	PhoneBook::display_phonebook_content(void) const
+void	user_interface(PhoneBook& phonebook)
 {
-	for (size_t i = 0; i < MAX_CONTACTS; ++i)
-	{
-		std::cout << "CONTACT NUMBER: " << i + 1 << std::endl;
-		contacts_list[i].display_contact_content();
-		std::cout << std::endl;
-	}
+	std::string	user_input;
+
+	std::cout << "PhoneBook> ";
+	std::getline(std::cin, user_input);
+	check_input_validity(user_input);
+	phonebook.get_contact_in_contacts_list(1).set_contact_first_name(user_input);
 }

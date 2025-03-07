@@ -24,9 +24,12 @@ class PhoneBook
 {
 	private:
 
-	Contact	contacts[MAX_CONTACTS];
+	Contact	contacts_list[MAX_CONTACTS];
 
 	public:
 
-	void	display_phonebook_content(void) const;
+	Contact&	get_contact_in_contacts_list(size_t contact_index);
+	void		display_phonebook_content(void) const;
 };
+
+void	user_interface(PhoneBook& phonebook);
