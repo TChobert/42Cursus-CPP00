@@ -11,3 +11,8 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook(void)
+	: _last_contact_index(0)
+{}
+

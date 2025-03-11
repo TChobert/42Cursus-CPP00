@@ -29,7 +29,7 @@ class PhoneBook
 
 	public:
 
-	explicit	PhoneBook(void);
+	PhoneBook(void);
 
 };
 
