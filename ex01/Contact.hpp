@@ -29,7 +29,7 @@ class Contact
 
 	public:
 
-	explicit Contact();
+	Contact();
 	void		SetContactFirstName(std::string first_name);
 	void		SetContactLastName(std::string last_name);
 	void		SetContactNickname(std::string nickname);
