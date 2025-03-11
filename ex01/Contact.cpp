@@ -12,50 +12,21 @@
 
 #include "Contact.hpp"
 
-// Default constructor for Contact class
+// Default constructor for Contact class with an initialisation list :
+
 Contact::Contact(void)
+	: _first_name("Empty"), _last_name("Empty"), _nickname("Empty"), _phone_number("Empty"), _darkest_secret("Empty") 
+{}
+
+// Setters for Contact class :
+
+// Display :
+
+void	Contact::DisplayContactContent(void) const
 {
-	first_name = "Empty";
-	last_name = "Empty";
-	nickname = "Empty";
-	phone_number = "Empty";
-	darkest_secret = "Empty";
-}
-
-// Setters for Contact class
-
-void	Contact::set_contact_first_name(std::string user_input)
-{
-	first_name = user_input;
-}
-
-void	Contact::set_contact_last_name(std::string user_input)
-{
-	last_name = user_input;
-}
-
-void	Contact::set_contact_nickname(std::string user_input)
-{
-	last_name = user_input;
-}
-
-void	Contact::set_contact_phone_number(std::string user_input)
-{
-	last_name = user_input;
-}
-
-void	Contact::set_contact_darkest_secret(std::string user_input)
-{
-	last_name = user_input;
-}
-
-// Display
-
-void	Contact::display_contact_content(void) const
-{
-	std::cout << "First name: " << first_name << std::endl;
-	std::cout << "Last name: " << last_name << std::endl;
-	std::cout << "Nickname: " << nickname << std::endl;
-	std::cout << "Phone number: " << phone_number << std::endl;
-	std::cout << "Darkest secret: " << darkest_secret << std::endl;
+	std::cout << "First name: " << _first_name << std::endl;
+	std::cout << "Last name: " << _last_name << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Phone number: " << _phone_number << std::endl;
+	std::cout << "Darkest secret: " << _darkest_secret << std::endl;
 }

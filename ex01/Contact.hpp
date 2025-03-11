@@ -21,19 +21,26 @@ class Contact
 {
 	private:
 
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+	std::string	_first_name;
+	std::string	_last_name;
+	std::string	_nickname;
+	std::string	_phone_number;
+	std::string	_darkest_secret;
 
 	public:
 
 	explicit Contact();
-	void	set_contact_first_name(std::string edit);
-	void	set_contact_last_name(std::string edit);
-	void	set_contact_nickname(std::string edit);
-	void	set_contact_phone_number(std::string edit);
-	void	set_contact_darkest_secret(std::string edit);
-	void	display_contact_content(void) const;
+	void		SetContactFirstName(std::string first_name);
+	void		SetContactLastName(std::string last_name);
+	void		SetContactNickname(std::string nickname);
+	void		SetContactPhoneNumber(std::string phone_number);
+	void		SetContactDarkestSecret(std::string darket_secret);
+	std::string	GetContactFirstName(void) const;
+	std::string	GetContactLastName(void) const;
+	std::string	GetContactNickname(void) const;
+	std::string	GetContactPhoneNumber(void) const;
+	std::string	GetContactDarkestSecret(void) const;
+	bool		IsValidName(const std::string& name) const;
+	bool		IsValidPhoneNumber(const std::string& phone_number) const;
+	void		DisplayContactContent(void) const;
 };

@@ -15,6 +15,7 @@
 int	main(void)
 {
 	PhoneBook	phonebook;
+
 	while (true)
 	{
 		user_interface(phonebook);
