@@ -44,10 +44,14 @@ void runTests()
 	phonebook.DisplayContact(0);
 	std::cout << std::endl;
 	std::cout << std::endl;
-	phonebook.DisplayContact(5);
+	phonebook.DisplayContact(1);
 	std::cout << std::endl;
 	std::cout << std::endl;
 	phonebook.DisplayContact(7);
+	std::cout << std::endl;
+	phonebook.AddContact("Zero", "User", "TU", "0658967569", "Secret X");
+	std::cout << std::endl;
+	phonebook.DisplayContact(0);
 	std::cout << std::endl;
 
 	std::cout << "Test: Contact invalide...\n";
