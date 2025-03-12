@@ -19,6 +19,10 @@ void runTests()
 	PhoneBook	phonebook;
 	std::string	contact_index = "2";
 
+	std::cout << std::endl;
+	phonebook.DisplayContact(0);
+	std::cout << std::endl;
+
 	std::cout << "Test: Initialisation...\n";
 	assert(phonebook.GetLastContactIndex() == 0);
 
@@ -45,6 +49,11 @@ void runTests()
 	std::cout << std::endl;
 	phonebook.DisplayContact(7);
 	std::cout << std::endl;
+
+	std::cout << "Test: Contact invalide...\n";
+	phonebook.AddContact("", "12", "", "065448789659", "");
+	std::cout << std::endl;
+
 	std::cout << "Tous les tests sont passés avec succès ! 🎉\n";
 }
 
