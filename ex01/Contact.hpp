@@ -42,5 +42,6 @@ class Contact
 	std::string	GetContactDarkestSecret(void) const;
 	bool		IsValidName(const std::string& name) const;
 	bool		IsValidPhoneNumber(const std::string& phone_number) const;
+	bool		IsDigit(const std::string& phone_number) const;
 	void		DisplayContactContent(void) const;
 };

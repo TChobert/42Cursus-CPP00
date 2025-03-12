@@ -19,6 +19,39 @@ Contact::Contact(void)
 		_phone_number("Empty"), _darkest_secret("Empty") 
 {}
 
+// Checkers for COntact class :
+
+bool	Contact::IsDigit(const std::string& phone_number) const
+{
+	for (size_t i = 0; i < phone_number.length(); ++i)
+	{
+		if (std::isdigit(phone_number[i] == false))
+			return (false);
+	}
+	return (true);
+}
+
+bool	Contact::IsValidPhoneNumber(const std::string& phone_number) const
+{
+	if (phone_number.empty())
+		return (false);
+	if (phone_number.length() != 10 || IsDigit(phone_number) == false)
+		return (false);
+	return (true);
+}
+
+bool	Contact::IsValidName(const std::string& name) const
+{
+	if (name.empty())
+		return (false);
+	for (size_t i = 0; i < name.length(); ++i)
+	{
+		if (std::isalnum(name[i]) == false)
+			return (false);
+	}
+	return (true);
+}
+
 // Setters for Contact class :
 
 void	Contact::SetContactFirstName(std::string first_name)

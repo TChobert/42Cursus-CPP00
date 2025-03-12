@@ -56,12 +56,33 @@ $(NAME): $(OBJS)
 $(OBJS): %.o: %.cpp
 	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
+## TEST RULE ##
+
+TEST_NAME := tests_domain
+TEST_SRCS := tests_domain.cpp PhoneBook.cpp Contact.cpp
+TEST_OBJS := $(TEST_SRCS:.cpp=.o)
+
+tests_domain: $(TEST_OBJS)
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) $(TEST_OBJS) -o $(TEST_NAME)
+	@echo "$(GREEN)Tests compiled! Run with ./$(TEST_NAME)$(RESET)"
+
+$(TEST_OBJS): %.o: %.cpp
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
+test: tests_domain
+	./$(TEST_NAME)
+
+## CLEAN ##
+
+clean_tests:
+	$(RM) $(TEST_OBJS) $(TEST_NAME)
+
 clean:
 	$(RM) $(OBJS)
 
-fclean: clean
+fclean: clean clean_tests
 	$(RM) $(NAME)
 
-re: fclean all
+re: fclean clean_tests all
 
 .PHONY: all clean fclean re
