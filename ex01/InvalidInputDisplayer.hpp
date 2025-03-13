@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AddContactController.hpp                           :+:      :+:    :+:   */
+/*   InvalidInputDisplayer.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 15:34:56 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/13 15:34:58 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/13 16:27:56 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/13 16:28:07 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include "PhoneBook.hpp"
-# include "InvalidInputDisplayer.hpp"
-# include "AddContactUseCase.hpp"
-# include "ContactDTO.hpp"
 # include <iostream>
+# include <cstdlib>
+# include <cctype>
+# include <string>
 
-class AddContactController
+class InvalidInputDisplayer
 {
-	private:
-
-	AddContactUseCase _add_contact_use_case;
-
 	public:
 
-	void	HandleUserInput(PhoneBook& phonebook);
+	static void	InvalidNameMessage(void);
+	static void	InvalidNicknameMessage(void);
+	static void InvalidNumberMessage(void);
+	static void	InvalidSecretMessage(void);
 };
