@@ -19,44 +19,11 @@ Contact::Contact(void)
 		_phone_number("Empty"), _darkest_secret("Empty") 
 {}
 
-// Checkers for COntact class :
-
-bool	Contact::IsDigit(const std::string& phone_number) const
-{
-	for (size_t i = 0; i < phone_number.length(); ++i)
-	{
-		if (std::isdigit(phone_number[i] == false))
-			return (false);
-	}
-	return (true);
-}
-
-bool	Contact::IsValidPhoneNumber(const std::string& phone_number) const
-{
-	if (phone_number.empty())
-		return (false);
-	if (phone_number.length() != 10 || IsDigit(phone_number) == false)
-		return (false);
-	return (true);
-}
-
-bool	Contact::IsValidName(const std::string& name) const
-{
-	if (name.empty())
-		return (false);
-	for (size_t i = 0; i < name.length(); ++i)
-	{
-		if (std::isalnum(name[i]) == false)
-			return (false);
-	}
-	return (true);
-}
-
 // Setters for Contact class :
 
 void	Contact::SetContactFirstName(std::string first_name)
 {
-	if (IsValidName(first_name) == true)
+	if (ContactValidator::IsValidName(first_name) == true)
 		_first_name = first_name;
 	else
 		std::cerr << "Contact: invalid contact first name" << std::endl;
@@ -64,7 +31,7 @@ void	Contact::SetContactFirstName(std::string first_name)
 
 void	Contact::SetContactLastName(std::string last_name)
 {
-	if (IsValidName(last_name))
+	if (ContactValidator::IsValidName(last_name))
 		_last_name = last_name;
 	else
 		std::cerr << "Contact: invalid contact last name" << std::endl;
@@ -72,7 +39,7 @@ void	Contact::SetContactLastName(std::string last_name)
 
 void	Contact::SetContactNickname(std::string nickname)
 {
-	if (nickname.empty() == false)
+	if (ContactValidator::IsValidName(nickname))
 		_nickname = nickname;
 	else
 		std::cerr <<"Contact: a contact nickname can't be empty." << std::endl;
@@ -80,7 +47,7 @@ void	Contact::SetContactNickname(std::string nickname)
 
 void	Contact::SetContactPhoneNumber(std::string phone_number)
 {
-	if (IsValidPhoneNumber(phone_number))
+	if (ContactValidator::IsValidPhoneNumber(phone_number))
 		_phone_number = phone_number;
 	else
 		std::cerr << "Contact: invalid phone number" << std::endl;
@@ -88,7 +55,7 @@ void	Contact::SetContactPhoneNumber(std::string phone_number)
 
 void	Contact::SetContactDarkestSecret(std::string darkest_secret)
 {
-	if (darkest_secret.empty() == false)
+	if (ContactValidator::IsValidSecret(darkest_secret))
 		_darkest_secret = darkest_secret;
 	else
 		std::cerr << "Contact: a contact darkest secret can't be empty." << std::endl;

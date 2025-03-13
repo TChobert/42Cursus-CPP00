@@ -12,6 +12,7 @@
 
 #pragma once
 
+# include "ContactValidator.hpp"
 # include <iostream>
 # include <cstdlib>
 # include <cctype>
@@ -40,8 +41,5 @@ class Contact
 	std::string	GetContactNickname(void) const;
 	std::string	GetContactPhoneNumber(void) const;
 	std::string	GetContactDarkestSecret(void) const;
-	bool		IsValidName(const std::string& name) const;
-	bool		IsValidPhoneNumber(const std::string& phone_number) const;
-	bool		IsDigit(const std::string& phone_number) const;
 	void		DisplayContactContent(void) const;
 };
