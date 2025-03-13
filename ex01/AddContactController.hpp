@@ -24,6 +24,12 @@ class AddContactController
 
 	AddContactUseCase _add_contact_use_case;
 
+	bool	GetContactValidFirstName(ContactDTO& contact_data);
+	bool	GetContactValidLastName(ContactDTO& contact_data);
+	bool	GetContatValidNickname(ContactDTO& contact_data);
+	bool	GetContactValidNumber(ContactDTO& contact_data);
+	bool	GetContactValidSecret(ContactDTO& contact_data);
+
 	public:
 
 	void	HandleUserInput(PhoneBook& phonebook);

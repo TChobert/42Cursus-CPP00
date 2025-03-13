@@ -56,26 +56,41 @@ $(NAME): $(OBJS)
 $(OBJS): %.o: %.cpp
 	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
-## TEST RULE ##
+## TEST DOMAIN ##
 
-TEST_NAME := tests_domain
-TEST_SRCS := tests_domain.cpp PhoneBook.cpp Contact.cpp
-TEST_OBJS := $(TEST_SRCS:.cpp=.o)
+TEST_DOMAIN_NAME := tests_domain
+TEST_DOMAIN_SRCS := tests_domain.cpp PhoneBook.cpp Contact.cpp ContactValidator.cpp
+TEST_DOMAIN_OBJS := $(TEST_DOMAIN_SRCS:.cpp=.o)
 
-tests_domain: $(TEST_OBJS)
-	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) $(TEST_OBJS) -o $(TEST_NAME)
-	@echo "$(GREEN)Tests compiled! Run with ./$(TEST_NAME)$(RESET)"
+tests_domain: $(TEST_DOMAIN_OBJS)
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) $(TEST_DOMAIN_OBJS) -o $(TEST_DOMAIN_NAME)
+	@echo "$(GREEN)Tests domain compiled! Run with ./$(TEST_DOMAIN_NAME)$(RESET)"
 
-$(TEST_OBJS): %.o: %.cpp
+$(TEST_DOMAIN_OBJS): %.o: %.cpp
 	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
-test: tests_domain
-	./$(TEST_NAME)
+## TEST UI ##
+
+TEST_UI_NAME := tests_UI
+TEST_UI_SRCS := tests_UI.cpp AddContactController.cpp ContactValidator.cpp InvalidInputDisplayer.cpp PhoneBook.cpp AddContactUseCase.cpp Contact.cpp
+TEST_UI_OBJS := $(TEST_UI_SRCS:.cpp=.o)
+
+tests_UI: $(TEST_UI_OBJS)
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) $(TEST_UI_OBJS) -o $(TEST_UI_NAME)
+	@echo "$(GREEN)Tests UI compiled! Run with ./$(TEST_UI_NAME)$(RESET)"
+
+$(TEST_UI_OBJS): %.o: %.cpp
+	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
+## TEST GLOBAL ##
+
+test: tests_domain tests_UI
+	./$(TEST_DOMAIN_NAME)
+	./$(TEST_UI_NAME)
 
 ## CLEAN ##
-
 clean_tests:
-	$(RM) $(TEST_OBJS) $(TEST_NAME)
+	$(RM) $(TEST_DOMAIN_OBJS) $(TEST_DOMAIN_NAME) $(TEST_UI_OBJS) $(TEST_UI_NAME)
 
 clean:
 	$(RM) $(OBJS)
@@ -85,4 +100,4 @@ fclean: clean clean_tests
 
 re: fclean clean_tests all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test tests_domain tests_UI
