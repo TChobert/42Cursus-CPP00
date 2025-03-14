@@ -11,17 +11,20 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "AddContactController.hpp"
 
 static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input)
 {
 	if (user_input.compare("ADD") == 0)
 	{
+		AddContactController	controller;
 
+		controller.HandleUserInput(phonebook);
 	}
-	else if (user_input.compare("DISPLAY") == 0)
-	{
+	// else if (user_input.compare("DISPLAY") == 0)
+	// {
 		
-	}
+	// }
 	else if (user_input.compare("EXIT") == 0)
 	{
 		std::cout << "Exit" << std::endl;
@@ -29,16 +32,22 @@ static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input)
 	}
 }
 
-void	user_interface(PhoneBook& phonebook)
+bool user_interface(PhoneBook& phonebook)
 {
-	std::string	user_input;
+	std::string user_input;
 
 	std::cout << "PhoneBook> ";
 	std::getline(std::cin, user_input);
 	if (std::cin.eof())
 	{
 		std::cout << std::endl << "Exit" << std::endl;
-		std::exit (EXIT_FAILURE);
+		return false;
+	}
+	if (user_input.compare("EXIT") == 0)
+	{
+		std::cout << "Exit" << std::endl;
+		return false;
 	}
 	command_dispatcher(phonebook, user_input);
+	return true;
 }

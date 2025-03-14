@@ -31,11 +31,12 @@ class Contact
 	public:
 
 	Contact();
-	void		SetContactFirstName(std::string first_name);
-	void		SetContactLastName(std::string last_name);
-	void		SetContactNickname(std::string nickname);
-	void		SetContactPhoneNumber(std::string phone_number);
-	void		SetContactDarkestSecret(std::string darket_secret);
+	~Contact();
+	void		SetContactFirstName(const std::string& first_name);
+	void		SetContactLastName(const std::string& last_name);
+	void		SetContactNickname(const std::string& nickname);
+	void		SetContactPhoneNumber(const std::string& phone_number);
+	void		SetContactDarkestSecret(const std::string& darkest_secret);
 	std::string	GetContactFirstName(void) const;
 	std::string	GetContactLastName(void) const;
 	std::string	GetContactNickname(void) const;

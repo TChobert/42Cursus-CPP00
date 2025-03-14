@@ -16,6 +16,8 @@ PhoneBook::PhoneBook(void)
 	: _last_contact_index(0)
 {}
 
+PhoneBook::~PhoneBook() {}
+
 void	PhoneBook::UpdateLastContactIndex(void)
 {
 	++_last_contact_index;

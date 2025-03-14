@@ -33,6 +33,10 @@ SRCS += main.cpp
 SRCS += UserInterface.cpp
 SRCS += PhoneBook.cpp
 SRCS += Contact.cpp
+SRCS += AddContactController.cpp
+SRCS += AddContactUseCase.cpp
+SRCS += ContactValidator.cpp
+SRCS += InvalidInputDisplayer.cpp
 
 ## INCLUDES ##
 
@@ -40,6 +44,11 @@ INCLUDES_DIR := .
 
 INCLUDES += PhoneBook.hpp
 INCLUDES += Contact.hpp
+INCLUDES += AddContactController.hpp
+INCLUDES += AddContactUseCase.hpp
+INCLUDES += ContactDTO.hpp
+INCLUDES += ContactValidator.hpp
+INCLUDES += InvalidInputDisplayer.hpp
 
 ## OBJECTS ##
 

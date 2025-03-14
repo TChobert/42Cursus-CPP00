@@ -30,6 +30,7 @@ class PhoneBook
 	public:
 
 	PhoneBook(void);
+	~PhoneBook();
 	void	AddContact(std::string first_name, std::string last_name,
 			std::string nickname, std::string number, std::string darkest_secret);
 	void	DisplayContact(size_t contact_index);
@@ -39,3 +40,5 @@ class PhoneBook
 
 	size_t	GetLastContactIndex(void);
 };
+
+bool	user_interface(PhoneBook& phonebook);

@@ -12,13 +12,12 @@
 
 #include "PhoneBook.hpp"
 
-int	main(void)
+int main(void)
 {
-	PhoneBook	phonebook;
+	PhoneBook phonebook;
 
-	while (true)
+	while (user_interface(phonebook))
 	{
-		user_interface(phonebook);
 	}
 	return (EXIT_SUCCESS);
 }

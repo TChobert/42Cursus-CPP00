@@ -19,9 +19,13 @@ Contact::Contact(void)
 		_phone_number("Empty"), _darkest_secret("Empty") 
 {}
 
+// Destructor for Contact class
+
+Contact::~Contact() {}
+
 // Setters for Contact class :
 
-void	Contact::SetContactFirstName(std::string first_name)
+void	Contact::SetContactFirstName(const std::string& first_name)
 {
 	if (ContactValidator::IsValidName(first_name) == true)
 		_first_name = first_name;
@@ -29,7 +33,7 @@ void	Contact::SetContactFirstName(std::string first_name)
 		std::cerr << "Contact: invalid contact first name" << std::endl;
 }
 
-void	Contact::SetContactLastName(std::string last_name)
+void	Contact::SetContactLastName(const std::string& last_name)
 {
 	if (ContactValidator::IsValidName(last_name))
 		_last_name = last_name;
@@ -37,7 +41,7 @@ void	Contact::SetContactLastName(std::string last_name)
 		std::cerr << "Contact: invalid contact last name" << std::endl;
 }
 
-void	Contact::SetContactNickname(std::string nickname)
+void	Contact::SetContactNickname(const std::string& nickname)
 {
 	if (ContactValidator::IsValidName(nickname))
 		_nickname = nickname;
@@ -45,7 +49,7 @@ void	Contact::SetContactNickname(std::string nickname)
 		std::cerr <<"Contact: a contact nickname can't be empty." << std::endl;
 }
 
-void	Contact::SetContactPhoneNumber(std::string phone_number)
+void	Contact::SetContactPhoneNumber(const std::string& phone_number)
 {
 	if (ContactValidator::IsValidPhoneNumber(phone_number))
 		_phone_number = phone_number;
@@ -53,7 +57,7 @@ void	Contact::SetContactPhoneNumber(std::string phone_number)
 		std::cerr << "Contact: invalid phone number" << std::endl;
 }
 
-void	Contact::SetContactDarkestSecret(std::string darkest_secret)
+void	Contact::SetContactDarkestSecret(const std::string& darkest_secret)
 {
 	if (ContactValidator::IsValidSecret(darkest_secret))
 		_darkest_secret = darkest_secret;
