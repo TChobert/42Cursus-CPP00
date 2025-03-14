@@ -19,7 +19,7 @@ Contact::Contact(void)
 		_phone_number("Empty"), _darkest_secret("Empty") 
 {}
 
-// Destructor for Contact class
+// Destructor for Contact class :
 
 Contact::~Contact() {}
 

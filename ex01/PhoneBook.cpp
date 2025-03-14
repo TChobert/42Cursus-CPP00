@@ -41,6 +41,11 @@ void	PhoneBook::DisplayContact(size_t contact_index)
 	_contacts_list[contact_index].DisplayContactContent();
 }
 
+void	PhoneBook::DisplayContact(size_t contact_index)
+{
+	_contacts_list[contact_index].DisplayContactContent();
+}
+
 // Getters for PhoneBook class
 
 size_t	PhoneBook::GetLastContactIndex(void)

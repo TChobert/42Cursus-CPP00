@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactDTO.hpp                                     :+:      :+:    :+:   */
+/*   DisplayContactController.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 19:24:44 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/12 19:24:48 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/14 11:55:04 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/14 11:55:06 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "DisplayContactController.hpp"
 
-# include <cstdlib>
-# include <cctype>
-# include <string>
-
-struct ContactDTO
+void	DisplayContactController::HandleUserInput(void)
 {
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
-};
+	std::string	user_input;
+	size_t		contact_index;
+
+	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
+	std::getline(std::cin, user_input);
+	
+}

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactDTO.hpp                                     :+:      :+:    :+:   */
+/*   DisplayContactController.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 19:24:44 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/12 19:24:48 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/14 11:55:11 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/14 11:55:20 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <cstdlib>
-# include <cctype>
-# include <string>
+# include <iostream>
+# include "PhoneBook.hpp"
+# include "DisplayContactUseCase.hpp"
+# include "InvalidInputDisplayer.hpp"
 
-struct ContactDTO
+class DisplayContactController
 {
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	private:
+
+	DisplayContactUseCase	_display_contact_use_case;
+
+	public:
+
+	//void	DisplayContactsList(void);
+	void	HandleUserInput(void);
 };

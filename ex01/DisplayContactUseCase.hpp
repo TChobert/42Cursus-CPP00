@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactDTO.hpp                                     :+:      :+:    :+:   */
+/*   DisplayContactUseCase.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 19:24:44 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/12 19:24:48 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/14 11:37:09 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/14 11:37:11 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include "PhoneBook.hpp"
+# include <iostream>
 # include <cstdlib>
 # include <cctype>
 # include <string>
 
-struct ContactDTO
+class DisplayContactUseCase
 {
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	public:
+
+	void	Execute(PhoneBook& phonebook, size_t contact_index);
 };
