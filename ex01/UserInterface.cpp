@@ -12,6 +12,7 @@
 
 #include "PhoneBook.hpp"
 #include "AddContactController.hpp"
+#include "DisplayContactController.hpp"
 
 static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input)
 {
@@ -21,10 +22,12 @@ static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input)
 
 		controller.HandleUserInput(phonebook);
 	}
-	// else if (user_input.compare("DISPLAY") == 0)
-	// {
-		
-	// }
+	else if (user_input.compare("DISPLAY") == 0)
+	{
+		DisplayContactController	controller;
+
+		controller.HandleUserInput(phonebook);
+	}
 	else if (user_input.compare("EXIT") == 0)
 	{
 		std::cout << "Exit" << std::endl;

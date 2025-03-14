@@ -11,13 +11,20 @@
 /* ************************************************************************** */
 
 #include "DisplayContactController.hpp"
+//modif BOOL !!
+bool	DisplayContactController::GetValidContactIndexFromUserInput(int& contact_index)
+{
+	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
+	std::cin >> contact_index;
+	return (true);
+}
 
-void	DisplayContactController::HandleUserInput(void)
+void	DisplayContactController::HandleUserInput(PhoneBook& phonebook)
 {
 	std::string	user_input;
-	size_t		contact_index;
+	int			contact_index;
 
-	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
-	std::getline(std::cin, user_input);
-	
+	if (!GetValidContactIndexFromUserInput(contact_index))
+		return ;
+	_display_contact_use_case.Execute(phonebook, contact_index);
 }
