@@ -31,3 +31,8 @@ void	InvalidInputDisplayer::InvalidSecretMessage(void)
 {
 	std::cerr << "Invalid darkest secret: a contact secret cannot be empty, and must only contain letters." << std::endl;
 }
+
+void	InvalidInputDisplayer::InvalidIndexMessage(void)
+{
+	std::cerr << "Invalid request: a contact number must be between 0 and 7." << std::endl;
+}

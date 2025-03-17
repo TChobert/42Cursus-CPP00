@@ -12,13 +12,13 @@
 
 #pragma once
 
-#include "Contact.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <cctype>
-#include <string>
+# include "Contact.hpp"
+# include <iostream>
+# include <cstdlib>
+# include <cctype>
+# include <string>
 
-#define MAX_CONTACTS 8
+# define MAX_CONTACTS 8
 
 class PhoneBook
 {
@@ -31,14 +31,17 @@ class PhoneBook
 
 	PhoneBook(void);
 	~PhoneBook();
+
+	// Setters :
+
 	void	AddContact(std::string first_name, std::string last_name,
 			std::string nickname, std::string number, std::string darkest_secret);
-	void	DisplayContact(size_t contact_index);
 	void	UpdateLastContactIndex(void);
 
-	//setters
+	// Getters:
 
-	size_t	GetLastContactIndex(void);
+	size_t	GetLastContactIndex(void) const;
+	Contact	GetContact(size_t contact_index) const;
 };
 
 bool	user_interface(PhoneBook& phonebook);

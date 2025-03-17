@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DisplayContactUseCase.hpp                          :+:      :+:    :+:   */
+/*   ContactPresenter.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 11:37:09 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/14 11:37:11 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/17 14:41:39 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/17 14:41:48 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <iostream>
-# include <cstdlib>
-# include <cctype>
-# include <string>
-# include "PhoneBook.hpp"
-#include "ContactPresenter.hpp"
+#include <iostream>
+#include "Contact.hpp"
 
-# define INDEX_MAX 7
-
-class SearchContactUseCase
+class ContactPresenter
 {
 	public:
 
-	void	Execute(PhoneBook& phonebook, int contact_index);
+	static void	DisplayContactContent(const Contact& contact);
 };

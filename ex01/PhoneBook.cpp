@@ -36,14 +36,14 @@ void	PhoneBook::AddContact(std::string first_name, std::string last_name,
 	this->UpdateLastContactIndex();
 }
 
-void	PhoneBook::DisplayContact(size_t contact_index)
-{
-	_contacts_list[contact_index].DisplayContactContent();
-}
-
 // Getters for PhoneBook class
 
-size_t	PhoneBook::GetLastContactIndex(void)
+size_t	PhoneBook::GetLastContactIndex(void) const
 {
 	return (_last_contact_index);
+}
+
+Contact	PhoneBook::GetContact(size_t contact_index) const
+{
+	return (_contacts_list[contact_index]);
 }

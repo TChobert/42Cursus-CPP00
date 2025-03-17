@@ -25,4 +25,5 @@ class InvalidInputDisplayer
 	static void	InvalidNicknameMessage(void);
 	static void InvalidNumberMessage(void);
 	static void	InvalidSecretMessage(void);
+	static void	InvalidIndexMessage(void);
 };

@@ -12,7 +12,11 @@
 
 #include "SearchContactUseCase.hpp"
 
-void	SearchContactUseCase::Execute(PhoneBook& phonebook, size_t contact_index)
+void	SearchContactUseCase::Execute(PhoneBook& phonebook, int contact_index)
 {
-	phonebook.DisplayContact(contact_index);
+	if (contact_index < 0 || contact_index > INDEX_MAX)
+		return ;
+	
+	const Contact&	contact = phonebook.GetContact(contact_index);
+	ContactPresenter::DisplayContactContent(contact);
 }

@@ -18,13 +18,19 @@
 # include "SearchContactUseCase.hpp"
 # include "InvalidInputDisplayer.hpp"
 
+typedef enum	e_index_validation_status
+{
+	VALID_INDEX,
+	INVALID_INDEX
+}				t_index_validation_status;
+
 class SearchContactController
 {
 	private:
 
 	SearchContactUseCase	_search_contact_use_case;
 
-	bool	GetValidContactIndexFromUserInput(int& contact_index);
+	t_index_validation_status	GetValidContactIndexFromUserInput(int& contact_index);
 
 	public:
 
