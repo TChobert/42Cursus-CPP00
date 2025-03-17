@@ -24,7 +24,7 @@ std::string PhoneBookPresenter::FormatField(const std::string& field)
 {
 	if (field.length() > 10)
 	{
-		return field.substr(0, 9) + ".";  // Tronque et ajoute '.'
+		return field.substr(0, 9) + ".";
 	}
 	return (field);
 }

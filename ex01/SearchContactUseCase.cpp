@@ -16,7 +16,7 @@ void	SearchContactUseCase::Execute(PhoneBook& phonebook, int contact_index)
 {
 	if (contact_index < 0 || contact_index > INDEX_MAX)
 		return ;
-	
+
 	const Contact&	contact = phonebook.GetContact(contact_index);
 	ContactPresenter::DisplayContactContent(contact);
 }

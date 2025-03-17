@@ -13,12 +13,30 @@
 #include "SearchContactController.hpp"
 #include "PhoneBookPresenter.hpp"
 
+void	SearchContactController::FlushUserInput(void)
+{
+	std::cin.clear();
+	std::cin.ignore(10000, '\n');
+}
+
+bool	SearchContactController::IsValidIndex(const std::string& user_input)
+{
+	if (user_input.length() > 1 || user_input[0] < '0' || user_input[0] > '7')
+		return (false);
+	return (true);
+}
+
 t_index_validation_status	SearchContactController::GetValidContactIndexFromUserInput(int& contact_index)
 {
+	std::string	user_input;
+
 	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
-	std::cin >> contact_index;
-	if (contact_index < 0 || contact_index > INDEX_MAX)
+	std::getline(std::cin, user_input);
+	if (IsValidIndex(user_input) == false)
+	{
 		return (INVALID_INDEX);
+	}
+	contact_index = std::atoi(user_input.c_str());
 	return (VALID_INDEX);
 }
 

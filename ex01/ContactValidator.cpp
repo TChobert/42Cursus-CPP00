@@ -16,7 +16,7 @@ bool	ContactValidator::IsDigit(const std::string& phone_number)
 {
 	for (size_t i = 0; i < phone_number.length(); ++i)
 	{
-		if (std::isdigit(phone_number[i] == false))
+		if (std::isdigit(phone_number[i]) == false)
 			return (false);
 	}
 	return (true);
@@ -24,9 +24,7 @@ bool	ContactValidator::IsDigit(const std::string& phone_number)
 
 bool	ContactValidator::IsValidPhoneNumber(const std::string& phone_number)
 {
-	if (phone_number.empty())
-		return (false);
-	if (IsDigit(phone_number) == false)
+	if (phone_number.empty() || IsDigit(phone_number) == false)
 		return (false);
 	return (true);
 }

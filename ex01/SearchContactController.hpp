@@ -14,6 +14,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 # include "PhoneBook.hpp"
 # include "SearchContactUseCase.hpp"
 # include "InvalidInputDisplayer.hpp"
@@ -21,7 +22,7 @@
 typedef enum	e_index_validation_status
 {
 	VALID_INDEX,
-	INVALID_INDEX
+	INVALID_INDEX,
 }				t_index_validation_status;
 
 class SearchContactController
@@ -31,9 +32,10 @@ class SearchContactController
 	SearchContactUseCase	_search_contact_use_case;
 
 	t_index_validation_status	GetValidContactIndexFromUserInput(int& contact_index);
+	bool						IsValidIndex(const std::string& user_input);
 
 	public:
 
-	//void	DisplayContactsList(void);
 	void	HandleUserInput(PhoneBook& phonebook);
+	void	FlushUserInput(void);
 };
