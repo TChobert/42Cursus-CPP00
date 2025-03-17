@@ -14,28 +14,34 @@
 #include "AddContactController.hpp"
 #include "SearchContactController.hpp"
 
-static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input)
+static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input,
+				AddContactController& add_controller, SearchContactController& search_controller)
 {
 	if (user_input.compare("ADD") == 0)
 	{
-		AddContactController	controller;
-
-		controller.HandleUserInput(phonebook);
+		add_controller.HandleUserInput(phonebook);
 	}
 	else if (user_input.compare("SEARCH") == 0)
 	{
-		SearchContactController	controller;
-
-		controller.HandleUserInput(phonebook);
+		search_controller.HandleUserInput(phonebook);
+		std::cin.clear();
+		std::cin.ignore(10000, '\n');
 	}
+}
+
+static void	prompt_gets_user_input(std::string& user_input)
+{
+	std::cout << "PhoneBook> ";
+	std::getline(std::cin, user_input);
 }
 
 bool user_interface(PhoneBook& phonebook)
 {
-	std::string user_input;
+	std::string				user_input;
+	AddContactController	add_controller;
+	SearchContactController	search_controller;
 
-	std::cout << "PhoneBook> ";
-	std::getline(std::cin, user_input);
+	prompt_gets_user_input(user_input);
 	if (std::cin.eof())
 	{
 		std::cout << std::endl << "Exit" << std::endl;
@@ -46,6 +52,6 @@ bool user_interface(PhoneBook& phonebook)
 		std::cout << "Exit" << std::endl;
 		return false;
 	}
-	command_dispatcher(phonebook, user_input);
+	command_dispatcher(phonebook, user_input, add_controller, search_controller);
 	return true;
 }

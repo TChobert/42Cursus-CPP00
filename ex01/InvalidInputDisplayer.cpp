@@ -34,5 +34,5 @@ void	InvalidInputDisplayer::InvalidSecretMessage(void)
 
 void	InvalidInputDisplayer::InvalidIndexMessage(void)
 {
-	std::cerr << "Invalid request: a contact number must be between 0 and 7." << std::endl;
+	std::cerr << "Invalid request: a contact index must be between 0 and 7." << std::endl;
 }
