@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DisplayContactUseCase.hpp"
+#include "SearchContactUseCase.hpp"
 
-void	DisplayContactUseCase::Execute(PhoneBook& phonebook, size_t contact_index)
+void	SearchContactUseCase::Execute(PhoneBook& phonebook, size_t contact_index)
 {
 	phonebook.DisplayContact(contact_index);
 }

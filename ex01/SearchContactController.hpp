@@ -15,14 +15,14 @@
 # include <iostream>
 # include <string>
 # include "PhoneBook.hpp"
-# include "DisplayContactUseCase.hpp"
+# include "SearchContactUseCase.hpp"
 # include "InvalidInputDisplayer.hpp"
 
-class DisplayContactController
+class SearchContactController
 {
 	private:
 
-	DisplayContactUseCase	_display_contact_use_case;
+	SearchContactUseCase	_search_contact_use_case;
 
 	bool	GetValidContactIndexFromUserInput(int& contact_index);
 

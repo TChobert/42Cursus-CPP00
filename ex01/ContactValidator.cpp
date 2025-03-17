@@ -26,7 +26,7 @@ bool	ContactValidator::IsValidPhoneNumber(const std::string& phone_number)
 {
 	if (phone_number.empty())
 		return (false);
-	if (phone_number.length() != 10 || IsDigit(phone_number) == false)
+	if (IsDigit(phone_number) == false)
 		return (false);
 	return (true);
 }

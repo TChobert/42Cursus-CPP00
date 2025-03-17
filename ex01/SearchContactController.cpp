@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DisplayContactController.hpp"
+#include "SearchContactController.hpp"
 //modif BOOL !!
-bool	DisplayContactController::GetValidContactIndexFromUserInput(int& contact_index)
+bool	SearchContactController::GetValidContactIndexFromUserInput(int& contact_index)
 {
 	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
 	std::cin >> contact_index;
 	return (true);
 }
 
-void	DisplayContactController::HandleUserInput(PhoneBook& phonebook)
+void	SearchContactController::HandleUserInput(PhoneBook& phonebook)
 {
 	std::string	user_input;
 	int			contact_index;
 
 	if (!GetValidContactIndexFromUserInput(contact_index))
 		return ;
-	_display_contact_use_case.Execute(phonebook, contact_index);
+	_search_contact_use_case.Execute(phonebook, contact_index);
 }

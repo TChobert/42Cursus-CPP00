@@ -18,7 +18,7 @@
 # include <cctype>
 # include <string>
 
-class DisplayContactUseCase
+class SearchContactUseCase
 {
 	public:
 

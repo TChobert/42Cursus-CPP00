@@ -19,7 +19,7 @@ void	InvalidInputDisplayer::InvalidNameMessage(void)
 
 void	InvalidInputDisplayer::InvalidNumberMessage(void)
 {
-	std::cerr << "Invalid number: a number must be a series of 10 digits." << std::endl;
+	std::cerr << "Invalid number: a number must be a series of digits." << std::endl;
 }
 
 void	InvalidInputDisplayer::InvalidNicknameMessage(void)

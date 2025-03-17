@@ -37,8 +37,8 @@ SRCS += AddContactController.cpp
 SRCS += AddContactUseCase.cpp
 SRCS += ContactValidator.cpp
 SRCS += InvalidInputDisplayer.cpp
-SRCS += DisplayContactController.cpp
-SRCS += DisplayContactUseCase.cpp
+SRCS += SearchContactController.cpp
+SRCS += SearchContactUseCase.cpp
 
 ## INCLUDES ##
 
@@ -51,8 +51,8 @@ INCLUDES += AddContactUseCase.hpp
 INCLUDES += ContactDTO.hpp
 INCLUDES += ContactValidator.hpp
 INCLUDES += InvalidInputDisplayer.hpp
-INCLUDES += DisplayContactController.hpp
-INCLUDES += DisplayContactUseCase.hpp
+INCLUDES += SearchContactController.hpp
+INCLUDES += SearchContactUseCase.hpp
 
 ## OBJECTS ##
 
