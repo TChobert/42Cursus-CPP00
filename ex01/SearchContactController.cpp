@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "SearchContactController.hpp"
+#include "PhoneBookPresenter.hpp"
 
 t_index_validation_status	SearchContactController::GetValidContactIndexFromUserInput(int& contact_index)
 {
@@ -26,6 +27,7 @@ void	SearchContactController::HandleUserInput(PhoneBook& phonebook)
 	std::string	user_input;
 	int			contact_index;
 
+	PhoneBookPresenter::DisplayPhoneBookContent(phonebook);
 	if (GetValidContactIndexFromUserInput(contact_index) == INVALID_INDEX)
 	{
 		InvalidInputDisplayer::InvalidIndexMessage();

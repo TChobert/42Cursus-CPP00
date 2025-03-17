@@ -40,6 +40,7 @@ SRCS += InvalidInputDisplayer.cpp
 SRCS += SearchContactController.cpp
 SRCS += SearchContactUseCase.cpp
 SRCS += ContactPresenter.cpp
+SRCS += PhoneBookPresenter.cpp
 
 ## INCLUDES ##
 
@@ -55,6 +56,7 @@ INCLUDES += InvalidInputDisplayer.hpp
 INCLUDES += SearchContactController.hpp
 INCLUDES += SearchContactUseCase.hpp
 INCLUDES += ContactPresenter.hpp
+INCLUDES += PhoneBookPresenter.hpp
 
 ## OBJECTS ##
 
