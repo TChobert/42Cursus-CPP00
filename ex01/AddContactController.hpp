@@ -29,6 +29,8 @@ class AddContactController
 	bool	GetContatValidNickname(ContactDTO& contact_data);
 	bool	GetContactValidNumber(ContactDTO& contact_data);
 	bool	GetContactValidSecret(ContactDTO& contact_data);
+	bool	GetValidatedInput(const std::string& prompt, std::string& field,
+				bool (*validator)(const std::string&), void (*error_displayer)(void));
 
 	public:
 

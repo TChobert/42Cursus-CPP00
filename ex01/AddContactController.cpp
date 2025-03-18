@@ -15,79 +15,47 @@
 
 bool	AddContactController::GetContactValidFirstName(ContactDTO& contact_data)
 {
-	std::cout << "New contact first name: " << std::endl;
-	std::getline(std::cin, contact_data.firstName);
-	if (std::cin.eof())
-	{
-		throw (QuitProgramException());
-	}
-	if (ContactValidator::IsValidName(contact_data.firstName) == false)
-	{
-		InvalidInputDisplayer::InvalidNameMessage();
-		return (false);
-	}
-	return (true);
+	return (GetValidatedInput("New contact first name: ", contact_data.firstName,
+		ContactValidator::IsValidName, InvalidInputDisplayer::InvalidNameMessage));
 }
 
 bool	AddContactController::GetContactValidLastName(ContactDTO& contact_data)
 {
-	std::cout << "New contact last name: " << std::endl;
-	std::getline(std::cin, contact_data.lastName);
-	if (std::cin.eof())
-	{
-		throw (QuitProgramException());
-	}
-	if (ContactValidator::IsValidName(contact_data.lastName) == false)
-	{
-		InvalidInputDisplayer::InvalidNameMessage();
-		return (false);
-	}
-	return (true);
+	return (GetValidatedInput("New contact last name: ", contact_data.lastName,
+		ContactValidator::IsValidName, InvalidInputDisplayer::InvalidNameMessage));
 }
 
 bool	AddContactController::GetContatValidNickname(ContactDTO& contact_data)
 {
-	std::cout << "New contact nickanme: " << std::endl;
-	std::getline(std::cin, contact_data.nickname);
-	if (std::cin.eof())
-	{
-		throw (QuitProgramException());
-	}
-	if (ContactValidator::IsValidName(contact_data.nickname) == false)
-	{
-		InvalidInputDisplayer::InvalidNicknameMessage();
-		return (false);
-	}
-	return (true);
+	return (GetValidatedInput("New contact nickname: ", contact_data.nickname,
+		ContactValidator::IsValidName, InvalidInputDisplayer::InvalidNicknameMessage));
 }
 
 bool	AddContactController::GetContactValidNumber(ContactDTO& contact_data)
 {
-	std::cout << "New contact number: " << std::endl;
-	std::getline(std::cin, contact_data.phoneNumber);
-	if (std::cin.eof())
-	{
-		throw (QuitProgramException());
-	}
-	if (ContactValidator::IsValidPhoneNumber(contact_data.phoneNumber) == false)
-	{
-		InvalidInputDisplayer::InvalidNumberMessage();
-		return (false);
-	}
-	return (true);
+	return (GetValidatedInput("New contact phone number: ", contact_data.phoneNumber,
+		ContactValidator::IsValidPhoneNumber, InvalidInputDisplayer::InvalidNumberMessage));
 }
 
 bool	AddContactController::GetContactValidSecret(ContactDTO& contact_data)
 {
-	std::cout << "New contact darkest secret: " << std::endl;
-	std::getline(std::cin, contact_data.darkestSecret);
+	return (GetValidatedInput("New contact darkest secret: ", contact_data.darkestSecret,
+		ContactValidator::IsValidSecret, InvalidInputDisplayer::InvalidSecretMessage));
+}
+
+bool	AddContactController::GetValidatedInput(const std::string& prompt, std::string& field,
+			bool (*Validator)(const std::string&), void (*ErrorDisplayer)(void))
+{
+	std::cout << prompt << std::endl;
+	std::getline(std::cin, field);
+
 	if (std::cin.eof())
 	{
 		throw (QuitProgramException());
 	}
-	if (ContactValidator::IsValidSecret(contact_data.darkestSecret) == false)
+	if (Validator(field) == false)
 	{
-		InvalidInputDisplayer::InvalidSecretMessage();
+		ErrorDisplayer();
 		return (false);
 	}
 	return (true);
