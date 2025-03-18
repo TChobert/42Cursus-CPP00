@@ -13,6 +13,7 @@
 #include "PhoneBook.hpp"
 #include "AddContactController.hpp"
 #include "SearchContactController.hpp"
+#include "QuitProgramException.hpp"
 
 static void	command_dispatcher(PhoneBook& phonebook, std::string& user_input,
 			SearchContactController& search_controller)
@@ -43,8 +44,7 @@ bool user_interface(PhoneBook& phonebook)
 	prompt_gets_user_input(user_input);
 	if (std::cin.eof())
 	{
-		std::cout << std::endl << "Exit" << std::endl;
-		return false;
+		throw (QuitProgramException());
 	}
 	if (user_input.compare("EXIT") == 0)
 	{

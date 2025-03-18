@@ -14,7 +14,7 @@
 
 void	InvalidInputDisplayer::InvalidNameMessage(void)
 {
-	std::cerr << "Invalid name: a contact name cannot be empty, and must only contain letters." << std::endl;
+	std::cerr << "Invalid name: a contact name cannot be empty, and must only contain letters or digits." << std::endl;
 }
 
 void	InvalidInputDisplayer::InvalidNumberMessage(void)
@@ -24,12 +24,12 @@ void	InvalidInputDisplayer::InvalidNumberMessage(void)
 
 void	InvalidInputDisplayer::InvalidNicknameMessage(void)
 {
-	std::cerr << "Invalid nickname: a contact ncikname cannot be empty, and must only contain letters." << std::endl;
+	std::cerr << "Invalid nickname: a contact ncikname cannot be empty, and must only contain letters or digits." << std::endl;
 }
 
 void	InvalidInputDisplayer::InvalidSecretMessage(void)
 {
-	std::cerr << "Invalid darkest secret: a contact secret cannot be empty, and must only contain letters." << std::endl;
+	std::cerr << "Invalid darkest secret: a contact secret cannot be empty, and must only contain letters or digits." << std::endl;
 }
 
 void	InvalidInputDisplayer::InvalidIndexMessage(void)

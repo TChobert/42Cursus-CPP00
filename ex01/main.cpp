@@ -11,13 +11,21 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "QuitProgramException.hpp"
 
 int main(void)
 {
 	PhoneBook phonebook;
 
-	while (user_interface(phonebook))
+	try
 	{
+		while (user_interface(phonebook))
+		{
+		}
+	}
+	catch (const QuitProgramException& e)
+	{
+		std::cout << std::endl << e.what() << std::endl;
 	}
 	return (EXIT_SUCCESS);
 }

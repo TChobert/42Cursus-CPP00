@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   QuitProgramException.hpp                           :+:      :+:    :+:   */
+/*   QuitProgramException.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 20:00:41 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/17 20:00:56 by tchobert         ###   ########.fr       */
+/*   Created: 2025/03/18 13:45:47 by tchobert          #+#    #+#             */
+/*   Updated: 2025/03/18 13:46:17 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "QuitProgramException.hpp"
 
-# include <exception>
-
-class QuitProgramException: public std::exception
+const char	*QuitProgramException::what(void) const throw()
 {
-	public:
-
-	const char* what(void) const throw();
-};
+	return ("Hasta la vista, baby !");
+}

@@ -11,11 +11,16 @@
 /* ************************************************************************** */
 
 #include "AddContactController.hpp"
+#include "QuitProgramException.hpp"
 
 bool	AddContactController::GetContactValidFirstName(ContactDTO& contact_data)
 {
 	std::cout << "New contact first name: " << std::endl;
 	std::getline(std::cin, contact_data.firstName);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (ContactValidator::IsValidName(contact_data.firstName) == false)
 	{
 		InvalidInputDisplayer::InvalidNameMessage();
@@ -28,6 +33,10 @@ bool	AddContactController::GetContactValidLastName(ContactDTO& contact_data)
 {
 	std::cout << "New contact last name: " << std::endl;
 	std::getline(std::cin, contact_data.lastName);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (ContactValidator::IsValidName(contact_data.lastName) == false)
 	{
 		InvalidInputDisplayer::InvalidNameMessage();
@@ -40,6 +49,10 @@ bool	AddContactController::GetContatValidNickname(ContactDTO& contact_data)
 {
 	std::cout << "New contact nickanme: " << std::endl;
 	std::getline(std::cin, contact_data.nickname);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (ContactValidator::IsValidName(contact_data.nickname) == false)
 	{
 		InvalidInputDisplayer::InvalidNicknameMessage();
@@ -52,6 +65,10 @@ bool	AddContactController::GetContactValidNumber(ContactDTO& contact_data)
 {
 	std::cout << "New contact number: " << std::endl;
 	std::getline(std::cin, contact_data.phoneNumber);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (ContactValidator::IsValidPhoneNumber(contact_data.phoneNumber) == false)
 	{
 		InvalidInputDisplayer::InvalidNumberMessage();
@@ -64,6 +81,10 @@ bool	AddContactController::GetContactValidSecret(ContactDTO& contact_data)
 {
 	std::cout << "New contact darkest secret: " << std::endl;
 	std::getline(std::cin, contact_data.darkestSecret);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (ContactValidator::IsValidSecret(contact_data.darkestSecret) == false)
 	{
 		InvalidInputDisplayer::InvalidSecretMessage();

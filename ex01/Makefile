@@ -41,6 +41,7 @@ SRCS += SearchContactController.cpp
 SRCS += SearchContactUseCase.cpp
 SRCS += ContactPresenter.cpp
 SRCS += PhoneBookPresenter.cpp
+SRCS += QuitProgramException.cpp
 
 ## INCLUDES ##
 
@@ -57,6 +58,7 @@ INCLUDES += SearchContactController.hpp
 INCLUDES += SearchContactUseCase.hpp
 INCLUDES += ContactPresenter.hpp
 INCLUDES += PhoneBookPresenter.hpp
+INCLUDES += QuitProgramException.hpp
 
 ## OBJECTS ##
 

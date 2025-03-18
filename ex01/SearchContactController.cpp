@@ -12,6 +12,7 @@
 
 #include "SearchContactController.hpp"
 #include "PhoneBookPresenter.hpp"
+#include "QuitProgramException.hpp"
 
 void	SearchContactController::FlushUserInput(void)
 {
@@ -32,6 +33,10 @@ t_index_validation_status	SearchContactController::GetValidContactIndexFromUserI
 
 	std::cout << "Please input the index of the contact that should be displayed" << std::endl;
 	std::getline(std::cin, user_input);
+	if (std::cin.eof())
+	{
+		throw (QuitProgramException());
+	}
 	if (IsValidIndex(user_input) == false)
 	{
 		return (INVALID_INDEX);
