@@ -25,7 +25,7 @@ bool	AddContactController::GetContactValidLastName(ContactDTO& contact_data)
 		ContactValidator::IsValidName, InvalidInputDisplayer::InvalidNameMessage));
 }
 
-bool	AddContactController::GetContatValidNickname(ContactDTO& contact_data)
+bool	AddContactController::GetContactValidNickname(ContactDTO& contact_data)
 {
 	return (GetValidatedInput("New contact nickname: ", contact_data.nickname,
 		ContactValidator::IsValidName, InvalidInputDisplayer::InvalidNicknameMessage));
@@ -66,7 +66,7 @@ void	AddContactController::HandleUserInput(PhoneBook& phonebook)
 	ContactDTO	contact_data;
 
 	if (!GetContactValidFirstName(contact_data) || !GetContactValidLastName(contact_data)
-		|| !GetContatValidNickname(contact_data) || !GetContactValidNumber(contact_data)
+		|| !GetContactValidNickname(contact_data) || !GetContactValidNumber(contact_data)
 		|| !GetContactValidSecret(contact_data))
 	{
 		return ;

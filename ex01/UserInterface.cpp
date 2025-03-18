@@ -48,7 +48,7 @@ bool user_interface(PhoneBook& phonebook)
 	}
 	if (user_input.compare("EXIT") == 0)
 	{
-		std::cout << "Exit" << std::endl;
+		std::cout << std::endl << "Phonebook: Eksit souksess !" << std::endl;
 		return false;
 	}
 	command_dispatcher(phonebook, user_input, search_controller);
