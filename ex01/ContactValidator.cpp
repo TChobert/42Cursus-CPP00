@@ -36,7 +36,12 @@ bool	ContactValidator::IsValidName(const std::string& name)
 	for (size_t i = 0; i < name.length(); ++i)
 	{
 		if (std::isalnum(name[i]) == false)
-			return (false);
+		{
+			if (name[i] == ' ')
+				continue;
+			else
+				return (false);
+		}
 	}
 	return (true);
 }
@@ -48,7 +53,12 @@ bool	ContactValidator::IsValidSecret(const std::string& secret)
 	for (size_t i = 0; i < secret.length(); ++i)
 	{
 		if (std::isalnum(secret[i]) == false)
-			return (false);
+		{
+			if (secret[i] == ' ')
+				continue ;
+			else
+				return (false);
+		}
 	}
 	return (true);
 }
